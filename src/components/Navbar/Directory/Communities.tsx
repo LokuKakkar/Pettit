@@ -27,9 +27,9 @@ const Communities:React.FC<CommunitiesProps> = () => {
 
 
             {mySnippets.filter(snippet => snippet.isModerator).map((snippet) => (
-                <div>
+                
                     <MenuListItem key={snippet.communityId} displayText={`r/${snippet.communityId}`} icon={FaReddit} link={`/r/${snippet.communityId}`} iconColor='blue.500' imageURL={snippet.imageURL}  />
-                </div>
+                
             ))}
         </Box>
 
@@ -47,9 +47,9 @@ const Communities:React.FC<CommunitiesProps> = () => {
             </MenuItem>
 
             {mySnippets.map((snippet) => (
-                <div>
+                
                     <MenuListItem key={snippet.communityId} displayText={`r/${snippet.communityId}`} icon={FaReddit} link={`/r/${snippet.communityId}`} iconColor='blue.500' imageURL={snippet.imageURL}  />
-                </div>
+               
             ))}
         </Box>
         </>
