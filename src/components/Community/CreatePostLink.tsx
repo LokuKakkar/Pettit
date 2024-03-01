@@ -10,6 +10,7 @@ import { auth } from "../../firebase/clientApp";
 import { useSetRecoilState } from "recoil";
 import { AuthModalState } from "../../atoms/authModalAtom";
 import useDirectory from "../../hooks/useDirectory";
+import { PiDogDuotone } from "react-icons/pi";
 // import useDirectory from "../../hooks/useDirectory";
 
 
@@ -42,7 +43,7 @@ const CreatePostLink: React.FC = () => {
     <Flex justify="space-evenly" align="center" bg="#1a1a1b" height="56px" 
       borderRadius={4} border="1px solid gray" p={2} mb={4}
     >
-      <Icon as={FaReddit} fontSize={36} color="gray.300" mr={4} />
+      <Icon as={PiDogDuotone} fontSize={36} color="gray.300" mr={4} />
       <Input placeholder="Create Post" fontSize="10pt" _placeholder={{ color: "gray.500" }}
         _hover={{
           bg: "#272729", border: "1px solid", borderColor: "blue.500",

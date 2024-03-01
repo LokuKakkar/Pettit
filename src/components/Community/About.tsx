@@ -14,6 +14,7 @@ import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useSetRecoilState } from 'recoil';
 import { AuthModalState } from '../../atoms/authModalAtom';
+import { PiDogDuotone } from 'react-icons/pi';
 
 type AboutProps = {
     communityData: Community;
@@ -115,7 +116,7 @@ const About:React.FC<AboutProps> = ({communityData}) => {
                                     <Image src={selectedFile || communityData.imageUrl} borderRadius="full" boxSize="40px" alt='community Image' />
                                 )  : 
                                  ( 
-                                    <Icon as={FaReddit} fontSize={35} color="brand.100" mr={2} />
+                                    <Icon as={PiDogDuotone} fontSize={35} color="brand.100" mr={2} />
                                  )}
                             </Flex>
                             {selectedFile && (

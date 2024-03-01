@@ -8,6 +8,7 @@ import { BsChat, BsDot } from 'react-icons/bs';
 import { useRouter } from 'next/router';
 import { FaReddit } from 'react-icons/fa';
 import Link from 'next/link';
+import { PiDogDuotone } from 'react-icons/pi';
 
 type PostItemProps = {
     post: Post;
@@ -77,7 +78,7 @@ const PostItem:React.FC<PostItemProps> = ({post,userIsCreator,userVoteValue,onVo
                                 {post.communityImageURL ? (
                                     <Image src={post.communityImageURL} borderRadius="full" boxSize="18px" mr={2}  />
                                 ) : (
-                                    <Icon as={FaReddit} fontSize="18pt" mr={1} color="blue.500" />
+                                    <Icon as={PiDogDuotone} fontSize="18pt" mr={1} color="blue.500" />
 
                                 )}
                                 

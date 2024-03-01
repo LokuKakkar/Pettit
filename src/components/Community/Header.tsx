@@ -3,6 +3,7 @@ import { Community } from '../../atoms/communitiesAtom';
 import { Box, Button, Flex, Icon, Image, Text } from '@chakra-ui/react';
 import { FaReddit } from 'react-icons/fa';
 import useCommunityData from '../../hooks/useCommunityData';
+import { PiDogDuotone } from 'react-icons/pi';
 
 type HeaderProps = {
     communityData: Community;
@@ -25,7 +26,7 @@ const Header:React.FC<HeaderProps> = ({communityData}) => {
                     borderRadius="full" boxSize="66px" alt="community image" position="relative" top={-3} color="blue.500" border="4px solid white" />
                       :
                       
-                    <Icon as={FaReddit} fontSize={64} position="relative" top={-3}
+                    <Icon as={PiDogDuotone} fontSize={64} position="relative" top={-3}
                     color="blue.500" border="4px solid white" borderRadius="50%"  />
                     }
                     <Flex  padding="10px 10px" >

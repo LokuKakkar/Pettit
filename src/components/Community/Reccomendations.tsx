@@ -6,6 +6,7 @@ import { firestore } from '../../firebase/clientApp';
 import { Box, Button, Flex, Icon, Image, Skeleton, SkeletonCircle, Stack, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { FaReddit } from 'react-icons/fa';
+import { PiDogDuotone } from 'react-icons/pi';
 
 
 const Reccomendations:React.FC = () => {
@@ -93,7 +94,7 @@ const Reccomendations:React.FC = () => {
                                                 {item.imageUrl? (
                                                     <Image src={item.imageUrl} borderRadius={"full"} boxSize="28px" mr={2}  />
                                                 ): (
-                                                    <Icon as={FaReddit} fontSize={30} color="brand.100" mr={2}  />
+                                                    <Icon as={PiDogDuotone} fontSize={30} color="brand.100" mr={2}  />
                                                 )}
 
                                                 <span style={{whiteSpace: "nowrap" , overflow:"hidden" , textOverflow: "ellipsis" }}>

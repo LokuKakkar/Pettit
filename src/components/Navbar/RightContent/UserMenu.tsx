@@ -11,6 +11,7 @@ import { auth } from '../../../firebase/clientApp';
 import { useRecoilState, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { AuthModalState } from '../../../atoms/authModalAtom';
 import { CommunityState } from '../../../atoms/communitiesAtom';
+import { PiDogDuotone } from 'react-icons/pi';
 
 type UserMenuProps = {
     user?: User | null; 
@@ -34,7 +35,7 @@ const UserMenu:React.FC<UserMenuProps> = ({user}) => {
                         
                         {user? (
                                 <>
-                                <Icon as={FaRedditSquare} color="white" fontSize={24} mr={1} />
+                                <Icon as={PiDogDuotone} color="white" fontSize={24} mr={1} />
                                 <Flex direction="column" display={{base:"none" , lg: "flex"}} fontSize={8} align="flex-start" mr={8}  >
                                     <Text fontWeight={700}>  
                                         {user?.displayName || user?.email?.split('@')[0] }

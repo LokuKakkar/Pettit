@@ -21,7 +21,7 @@ const Navbar:React.FC = () => {
         <Flex bg="#1a1a1b" height="52px" padding="6px 12px"  justify={{md: "space-between"}} borderBottom="1px solid #1a282d" pb={4}  >
             <Flex align="center" width={{base:"40px" , md: "auto"}} mr={{base:0 , md:2}}  onClick={() => onSelectMenuItem(defaultMenuItem)} cursor="pointer" >
                 <Icon as={PiDogDuotone} color="red" fontSize={{base: "18pt", md: "28pt" }} />
-                <Image src="/images/pettitLogoText3.png" height='34px' align="center" pb="2px" display={{base: "none" , md: "unset"}} />
+                <Image src="/images/PettitLogoText3.png" height='34px' align="center" pb="2px" display={{base: "none" , md: "unset"}} />
             </Flex>
             {user && <Directory />}
             <SearchInput user={user} />

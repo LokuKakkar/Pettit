@@ -6,6 +6,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { CommunityState } from '../../../atoms/communitiesAtom';
 import MenuListItem from './MenuListItem';
 import { FaReddit } from 'react-icons/fa';
+import { PiDogDuotone } from 'react-icons/pi';
 
 type CommunitiesProps = {
     
@@ -28,7 +29,7 @@ const Communities:React.FC<CommunitiesProps> = () => {
 
             {mySnippets.filter(snippet => snippet.isModerator).map((snippet) => (
                 
-                    <MenuListItem key={snippet.communityId} displayText={`r/${snippet.communityId}`} icon={FaReddit} link={`/r/${snippet.communityId}`} iconColor='blue.500' imageURL={snippet.imageURL}  />
+                    <MenuListItem key={snippet.communityId} displayText={`r/${snippet.communityId}`} icon={PiDogDuotone} link={`/r/${snippet.communityId}`} iconColor='blue.500' imageURL={snippet.imageURL}  />
                 
             ))}
         </Box>
@@ -48,7 +49,7 @@ const Communities:React.FC<CommunitiesProps> = () => {
 
             {mySnippets.map((snippet) => (
                 
-                    <MenuListItem key={snippet.communityId} displayText={`r/${snippet.communityId}`} icon={FaReddit} link={`/r/${snippet.communityId}`} iconColor='blue.500' imageURL={snippet.imageURL}  />
+                    <MenuListItem key={snippet.communityId} displayText={`r/${snippet.communityId}`} icon={PiDogDuotone} link={`/r/${snippet.communityId}`} iconColor='blue.500' imageURL={snippet.imageURL}  />
                
             ))}
         </Box>

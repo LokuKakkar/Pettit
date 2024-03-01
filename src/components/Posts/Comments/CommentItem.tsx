@@ -4,6 +4,7 @@ import moment from 'moment';
 import React from 'react';
 import {FaReddit} from "react-icons/fa"
 import { IoArrowDownCircleOutline, IoArrowUpCircleOutline } from "react-icons/io5"
+import { PiDogDuotone } from 'react-icons/pi';
 
 
 export type Comment = {
@@ -34,7 +35,7 @@ const CommentItem:React.FC<CommentItemProps> = ({comment, onDeleteComment, loadi
         <Flex>
 
             <Box mr={2} >
-                <Icon fontSize={30} color="gray.300" as={FaReddit} />
+                <Icon fontSize={30} color="gray.300" as={PiDogDuotone} />
             </Box>
 
             <Stack spacing={1}>

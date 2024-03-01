@@ -4,6 +4,7 @@ import { DirectoryMenuItem, directoryMenuState } from "../atoms/DirectoryMenuAto
 import { useRouter } from "next/router";
 import { CommunityState } from "../atoms/communitiesAtom";
 import { FaReddit } from "react-icons/fa";
+import { PiDogDuotone } from "react-icons/pi";
 
 
 
@@ -42,7 +43,7 @@ const useDirectory = () => {
                 ...prev,
                 selectedMenuItem: {
                     displayText: `r/${currentCommunity.id}`, link: `/r/${currentCommunity.id}`,
-                    imageURL: currentCommunity.imageUrl, icon: FaReddit, iconColor: "blue.500"
+                    imageURL: currentCommunity.imageUrl, icon: PiDogDuotone, iconColor: "blue.500"
                 }
             }))
         }
