@@ -16,6 +16,7 @@ import { useRecoilValue } from 'recoil';
 import useCommunityData from '../hooks/useCommunityData';
 import Reccomendations from '../components/Community/Reccomendations';
 import PersonalHome from '../components/Community/PersonalHome';
+import LyrifyAdd from '../components/Community/LyrifyAdd';
 
 export default function Home() {
   const [user, loadingUser] = useAuthState(auth);
@@ -169,7 +170,7 @@ export default function Home() {
 
       <Stack>
         <Reccomendations />
-
+        <LyrifyAdd />
         {/* ADD FUNCTIONALITY HERE */}
         <PersonalHome />
       </Stack>

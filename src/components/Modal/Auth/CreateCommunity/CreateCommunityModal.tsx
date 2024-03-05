@@ -89,7 +89,13 @@ const CreateCommunityModal:React.FC<CreateCommunityModalProps> = ({open , handle
 
             handleClose();
             toggleMenuOpen();
-            router.push(`r/${communityName}`)
+
+            if(router.asPath.includes("/r/")){
+                router.push(`${communityName}`)
+            }            
+            else{
+                router.push(`r/${communityName}`)
+            }
             
         } catch (error: any) {
             console.log(error);

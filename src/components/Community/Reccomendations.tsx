@@ -90,7 +90,7 @@ const Reccomendations:React.FC = () => {
                                                     {index + 1}
                                                 </Text>
                                             </Flex>
-                                            <Flex align="center" width="80%" >
+                                            <Flex align="center" width="80%" cursor="pointer" >
                                                 {item.imageUrl? (
                                                     <Image src={item.imageUrl} borderRadius={"full"} boxSize="28px" mr={2}  />
                                                 ): (
