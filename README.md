@@ -1,34 +1,131 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pettit - Social Media Platform Documentation
 
-## Getting Started
+## Overview
+Pettit is a Reddit-like social media platform built with Next.js, featuring real-time posts, community management, and user authentication through Firebase.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
+### Frontend
+- **Next.js 12.3.4** - React framework with Pages Router
+- **React 18.2.0** - UI library
+- **TypeScript** - Type safety
+- **Chakra UI 2.8.2** - Component library and styling
+- **Framer Motion 11.0.5** - Animations
+- **Recoil 0.7.7** - State management
+
+### Backend & Services
+- **Firebase 10.8.0** - Authentication, Firestore database, storage
+- **Firebase Functions 4.7.0** - Serverless functions
+
+### Additional Libraries
+- **react-firebase-hooks 5.1.1** - Firebase React hooks
+- **react-icons 5.0.1** - Icon library
+- **moment 2.30.1** - Date manipulation
+
+## Project Structure
+
+```
+src/
+├── pages/                 # Next.js pages (Pages Router)
+│   ├── _app.tsx          # App wrapper with providers
+│   ├── index.tsx         # Home page
+│   └── api/              # API routes
+├── components/           # React components
+│   ├── Layout/           # Layout components
+│   ├── Navbar/           # Navigation components
+│   ├── Posts/            # Post-related components
+│   └── Community/        # Community features
+├── chakra/               # Chakra UI theme configuration
+├── firebase/             # Firebase configuration
+├── hooks/                # Custom React hooks
+└── atoms/                # Recoil state atoms
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Architecture Overview
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### State Management
+- **Recoil** for global state management
+- Atomic state pattern with separate atoms for:
+  - Posts (`postsAtom`)
+  - Communities (`communitiesAtom`) 
+  - Directory menu (`DirectoryMenuAtom`)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Authentication
+- Firebase Authentication integrated via `react-firebase-hooks`
+- User state managed globally through `useAuthState(auth)`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Data Layer
+- **Firestore** for real-time database
+- Collections for posts, communities, votes
+- Real-time listeners for live updates
 
-## Learn More
+### Styling System
+- **Chakra UI** with custom theme
+- Dark theme with brand colors (`#ff3c00` primary)
+- Custom button variants and global styles
+- Responsive design with breakpoints
 
-To learn more about Next.js, take a look at the following resources:
+## Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Posts System
+- Create, read, update, delete posts
+- Voting system (upvote/downvote)
+- Real-time updates
+- Post loading states
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Community Management
+- Community creation and joining
+- Community-specific posts
+- Recommendations system
 
-## Deploy on Vercel
+### User Interface
+- Responsive navbar with search
+- Directory navigation
+- Personal home dashboard
+- Post creation interface
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Prerequisites
+- Node.js
+- Firebase project setup
+- Environment variables configured
+
+### Installation
+```bash
+npm install
+npm run dev
+```
+
+### Environment Variables
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+```
+
+## Component Architecture
+
+### Layout System
+- `Layout.tsx` - Main layout wrapper
+- `PageContent.tsx` - Content area layout
+- `Navbar.tsx` - Navigation header
+
+### State Hooks
+- `usePosts()` - Post management logic
+- `useCommunityData()` - Community data handling
+- `useDirectory()` - Navigation state
+
+### Firebase Integration
+- `clientApp.ts` - Firebase initialization
+- SSR-compatible setup with `getApps()` check
+- Modular exports for auth, firestore, storage
+
+## Deployment
+- Configured for Vercel deployment
+- Static asset optimization
+- SWC compiler enabled for performance
